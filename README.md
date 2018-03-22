@@ -10,3 +10,6 @@ This project was bootstrapped with
 API's
 - 'https://www.googleapis.com/books/v1/volumes?q=redux';
 - 'https://jsonplaceholder.typicode.com/users'
+
+stackblitz:
+- 'https://stackblitz.com/github/thinking-in-redux/redux-patterns-workshop'
