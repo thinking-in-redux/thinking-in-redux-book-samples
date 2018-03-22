@@ -1,12 +1,14 @@
-import {createStore, compose, applyMiddleware} from 'redux';
+import {applyMiddleware, compose, createStore} from 'redux';
 import {DevTools} from '../ui/DevTool';
-import {epicMiddleware} from "./middleware";
 import {rootReducer} from "./reducers";
+
+import {coreMiddleware} from "./middleware/core";
+import {appMiddleware} from "./middleware/app";
 
 // compose store enhancers
 const enhancer = compose(
-  applyMiddleware(epicMiddleware),
+  applyMiddleware(...coreMiddleware, ...appMiddleware),
   DevTools.instrument()
 );
 
-export const store = createStore( rootReducer, {}, enhancer);
+export const store = createStore(rootReducer, {}, enhancer);

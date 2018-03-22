@@ -1,8 +1,9 @@
 {
   "name": "thinking-in-redux",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.1",
+  "private": false,
   "dependencies": {
+    "json-server": "^0.12.1",
     "normalize.css": "8.0.0",
     "ramda": "0.25.0",
     "react": "16.2.0",
@@ -17,6 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "api": "json-server db.json -p 3001 -d 1000",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
