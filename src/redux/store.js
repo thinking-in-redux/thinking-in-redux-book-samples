@@ -1,14 +1,8 @@
-import {applyMiddleware, compose, createStore} from 'redux';
-import {DevTools} from '../ui/DevTool';
-import {rootReducer} from "./reducers";
+import {createStore, compose} from 'redux';
+import {DevTools} from '../ui/DevTool'
 
-import {coreMiddleware} from "./middleware/core";
-import {appMiddleware} from "./middleware/app";
-
-// compose store enhancers
-const enhancer = compose(
-  applyMiddleware(...coreMiddleware, ...appMiddleware),
+const enhancer = compose(  
   DevTools.instrument()
 );
 
-export const store = createStore(rootReducer, {}, enhancer);
+export const store = createStore( state => state, {}, enhancer );
