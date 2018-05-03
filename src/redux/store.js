@@ -5,4 +5,6 @@ const enhancer = compose(
   DevTools.instrument()
 );
 
-export const store = createStore( state => state, {}, enhancer );
+export const store = createStore( state => state, {
+  message: 'Thinking in Redux'
+}, enhancer );
