@@ -1,3 +1,5 @@
+import { SET_NOTIFICATION } from "../actions/notification.actions";
+
 const initState = [];
 
 export const notificationsReducer = (notifications = initState, action) => {
