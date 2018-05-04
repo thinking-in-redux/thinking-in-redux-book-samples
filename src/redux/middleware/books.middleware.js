@@ -14,7 +14,7 @@ export const booksMiddleware = () => (next) => (action) => {
       break;
 
     case `${BOOKS} ${API_SUCCESS}`:
-      next(setBooks(action.payload));
+      next(setBooks(action.payload.items));
       next(setLoader(false, BOOKS));
       break;
 
