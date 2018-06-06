@@ -1,18 +1,20 @@
 import {DevTools} from '../ui/DevTool'
-import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
-import { booksReducer } from './reducers/books.reducer';
-import { booksMiddleware } from './middleware/books';
-import { apiMiddleware } from './middleware/api';
+import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
+import {booksReducer} from './reducers/books.reducer';
+import {booksMiddleware} from './middleware/books';
+import {apiMiddleware} from './middleware/api';
 import {uiReducer} from "./reducers/ui.reducer";
 import {notificationsReducer} from "./reducers/notification.reducer";
 import {normalizeMiddleware} from "./middleware/normalize";
 import {notificationMiddleware} from "./middleware/notification";
 import {loggerMiddleware} from "./middleware/logger";
 import {actionSplitterMiddleware} from "./middleware/actionSplitter";
+import {undoable} from "./reducers/undoable";
+import {stateFreezer} from "./reducers/stateFreezer";
 
 // shape the state structure
 const rootReducer = combineReducers({
-  books: booksReducer,
+  books: undoable(booksReducer),
   ui: uiReducer,
   notification: notificationsReducer
 });
@@ -39,4 +41,4 @@ const enhancer = compose(
 );
 
 // create and configure the store
-export const store = createStore( rootReducer, {}, enhancer );
+export const store = createStore(stateFreezer(rootReducer), {}, enhancer);
