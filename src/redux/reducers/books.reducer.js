@@ -1,4 +1,4 @@
-import { SET_BOOKS } from "../actions/books.actions"
+import {SET_BOOKS} from "../actions/books.actions";
 
 const initState = [];
 
