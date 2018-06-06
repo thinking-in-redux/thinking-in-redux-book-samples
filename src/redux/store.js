@@ -1,16 +1,16 @@
 import {DevTools} from '../ui/DevTool'
 import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
 import {booksReducer} from './reducers/books.reducer';
-import {booksMiddleware} from './middleware/books';
-import {apiMiddleware} from './middleware/api';
+import {booksMiddleware} from './middleware/feature/books';
+import {apiMiddleware} from './middleware/core/api';
 import {uiReducer} from "./reducers/ui.reducer";
 import {notificationsReducer} from "./reducers/notification.reducer";
-import {normalizeMiddleware} from "./middleware/normalize";
-import {notificationMiddleware} from "./middleware/notification";
-import {loggerMiddleware} from "./middleware/logger";
-import {actionSplitterMiddleware} from "./middleware/actionSplitter";
-import {undoable} from "./reducers/undoable";
-import {stateFreezer} from "./reducers/stateFreezer";
+import {normalizeMiddleware} from "./middleware/core/normalize";
+import {notificationMiddleware} from "./middleware/core/notification";
+import {loggerMiddleware} from "./middleware/core/logger";
+import {actionSplitterMiddleware} from "./middleware/core/actionSplitter";
+import {undoable} from "./reducerEnhancers/undoable";
+import {stateFreezer} from "./reducerEnhancers/stateFreezer";
 
 // shape the state structure
 const rootReducer = combineReducers({

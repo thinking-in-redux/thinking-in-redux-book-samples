@@ -1,4 +1,4 @@
-import {removeNotification, SET_NOTIFICATION, setNotification} from "../actions/notification";
+import {removeNotification, SET_NOTIFICATION, setNotification} from "../../actions/notification";
 
 export const notificationMiddleware = () => (next) => (action) => {
 

@@ -1,5 +1,5 @@
-import {dataNormalized} from "../actions/data";
-import {setBooks} from "../actions/books";
+import {dataNormalized} from "../../actions/data";
+import {setBooks} from "../../actions/books";
 
 export const normalizeMiddleware = ({dispatch}) => (next) => (action) => {
 
