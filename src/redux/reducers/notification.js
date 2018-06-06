@@ -1,4 +1,4 @@
-import {SET_NOTIFICATION} from "../actions/notification.actions";
+import {SET_NOTIFICATION} from "../actions/notification";
 
 const initState = [];
 
