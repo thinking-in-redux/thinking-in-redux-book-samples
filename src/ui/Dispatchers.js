@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchBooks } from "../redux/actions/books.actions"
+import { fetchBooks } from "../redux/actions/books"
 
 const Dispatchers = (props) => (
   <div className="dispatchers">

@@ -1,7 +1,7 @@
-import {BOOKS, FETCH_BOOKS, setBooks} from "../actions/books.actions";
-import {API_ERROR, API_SUCCESS, apiRequest} from "../actions/api.actions";
-import {setLoader} from "../actions/ui.actions";
-import {setNotification} from "../actions/notification.actions";
+import {BOOKS, FETCH_BOOKS, setBooks} from "../actions/books";
+import {API_ERROR, API_SUCCESS, apiRequest} from "../actions/api";
+import {setLoader} from "../actions/ui";
+import {setNotification} from "../actions/notification";
 
 const BOOKS_URL = 'https://www.googleapis.com/books/v1/volumes?q=redux';
 
