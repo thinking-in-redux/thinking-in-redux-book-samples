@@ -11,7 +11,8 @@ export const fetchBooks = ({query}) => ({
   payload: query
 });
 
-export const setBooks = ({books}) => ({
+export const setBooks = ({books, normalizeKey}) => ({
   type: SET_BOOKS,
-  payload: books
+  payload: books,
+  meta: {normalizeKey, feature: BOOKS}
 });
